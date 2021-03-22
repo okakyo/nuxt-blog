@@ -13,17 +13,17 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "*.{js,vue}": "eslint --fix",
+    "*.{css,vue}": "stylelint --fix"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "@nuxtjs/composition-api": "^0.22.3",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
