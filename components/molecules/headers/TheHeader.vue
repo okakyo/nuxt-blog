@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar class="ma-1" fixed app>
-    <v-spacer />
+  <v-app-bar app>
+    <v-spacer v-if="$vuetify.breakpoint.smAndDown" />
     <h2 class="">Kyoro Site</h2>
     <v-spacer />
   </v-app-bar>

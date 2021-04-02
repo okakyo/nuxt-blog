@@ -1,6 +1,11 @@
 <template>
   <div>
-    <nuxt-content />
+    <h1>{{ page.title }}</h1>
+    <v-divider />
+    <div>
+      {{ page.discription }}
+    </div>
+    <nuxt-content :document="page" />
   </div>
 </template>
 
@@ -8,8 +13,12 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  data() {
-    return {}
+  async asyncData({ params, $content }) {
+    const slug = params.slug
+    const page = await $content(slug).fetch()
+    return {
+      page,
+    }
   },
 })
 </script>

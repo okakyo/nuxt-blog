@@ -1,11 +1,13 @@
 <template>
-  <v-row justify="center">
-    <v-col v-if="$vuetify.breakpoint.mdAndUp" md="3" xl="4">
+  <v-row wrap justify="center" class="pa-3">
+    <v-col cols="12" sm="10" md="7" xl="6">
+      <v-card class="pa-3">
+        <slot name="TheContent" />
+      </v-card>
+    </v-col>
+    <v-col v-if="$vuetify.breakpoint.mdAndUp" md="3" lg="2" xl="2" class="pa-3">
       <introduction-card />
       <article-list-card />
-    </v-col>
-    <v-col cols="12" sm="10" md="9" xl="8">
-      <v-card height="90vh"> </v-card>
     </v-col>
   </v-row>
 </template>
