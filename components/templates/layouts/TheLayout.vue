@@ -1,6 +1,6 @@
 <template>
   <v-row wrap justify="center" class="pa-3">
-    <v-col cols="12" sm="10" md="7" xl="6">
+    <v-col cols="12" sm="10" md="8" xl="7">
       <v-card class="pa-3">
         <slot name="TheContent" />
       </v-card>
@@ -11,10 +11,12 @@
     </v-col>
   </v-row>
 </template>
+
 <script lang="ts">
 import Vue from 'vue'
 import ArticleListCard from '~/components/organisms/cards/ArticleListCard.vue'
 import IntroductionCard from '~/components/organisms/cards/IntroductionCard.vue'
+
 export default Vue.extend({
   components: { IntroductionCard, ArticleListCard },
 })

@@ -1,6 +1,6 @@
 <template>
-  <v-card outlined class="pa-2">
-    <v-list-item three-line :to="`/articles/${articleSlug}`">
+  <v-card flat class="pa-2 ma-3" :to="`/articles/${articleSlug}`">
+    <v-list-item three-line>
       <v-list-item-avatar
         tile
         size="90"
