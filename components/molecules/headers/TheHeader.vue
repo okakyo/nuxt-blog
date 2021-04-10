@@ -1,6 +1,7 @@
 <template>
   <v-app-bar app>
-    <h2 class="">Kyoro Site</h2>
+    <v-app-bar-title> Kyoro Site </v-app-bar-title>
+    <v-btn text exact to="/"></v-btn>
     <v-spacer />
     <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
   </v-app-bar>

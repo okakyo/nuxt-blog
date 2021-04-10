@@ -26,8 +26,9 @@ export default Vue.extend({
     ArticleCard,
   },
   async asyncData({ $content }) {
-    const articleList = await $content('articles', { deep: true }).fetch()
-    console.log(articleList)
+    const articleList = await $content('articles', { deep: true })
+      .only(['title', 'slug', 'createdAt', 'updatedAt', 'tags'])
+      .fetch()
     return {
       articleList,
     }
