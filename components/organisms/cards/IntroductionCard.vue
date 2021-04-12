@@ -19,22 +19,21 @@
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
-import { mdiGithub, mdiTwitter, mdiPost } from '@mdi/js'
 export default defineComponent({
   setup() {
     const actions = ref([
       {
-        icon: mdiTwitter,
+        icon: 'mdi-twitter',
         color: '',
         to: 'https://twitter.com/31415O_Kyo',
       },
       {
-        icon: mdiGithub,
+        icon: 'mdi-github',
         color: '',
         to: 'https://github.com/okakyo',
       },
       {
-        icon: mdiPost,
+        icon: 'mdi-post',
         color: '',
         to: 'https://okakyo-new-portfolio.netlify.app/',
       },
