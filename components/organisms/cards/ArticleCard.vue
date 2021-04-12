@@ -1,6 +1,6 @@
 <template>
-  <v-card flat class="pa-2 ma-3" :to="`/articles/${articleSlug}`">
-    <v-list-item three-line>
+  <v-card flat class="pa-2 ma-3">
+    <v-list-item three-line nuxt :to="article.path">
       <v-list-item-avatar
         tile
         size="90"
@@ -9,49 +9,34 @@
       ></v-list-item-avatar>
       <v-list-item-content class="pa-5">
         <v-list-item-title class="headline mb-1">
-          {{ articleTitle }}
+          {{ article.title }}
         </v-list-item-title>
-        <v-list-item-subtitle>{{ articleDate }}</v-list-item-subtitle>
-        <v-chip-group v-if="articleTags.length > 0">
-          <v-chip
-            v-for="(tag, index) in articleTags"
-            :key="index"
-            :to="`/tag/${item.tag}`"
-          >
-            {{ item.name }}
-          </v-chip>
-        </v-chip-group>
       </v-list-item-content>
     </v-list-item>
+    <v-card-actions>
+      <v-chip-group v-if="article.tags && article.tags.length > 0">
+        <v-chip
+          v-for="(item, index) in article.tags"
+          :key="index"
+          small
+          :to="`/tag/${item}`"
+        >
+          {{ item }}
+        </v-chip>
+      </v-chip-group>
+    </v-card-actions>
   </v-card>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
   name: 'ArticleCard',
   props: {
-    articleTitle: {
-      type: String,
-      default: 'sample',
-    },
-    articleDate: {
-      type: Date,
-      default: () => {
-        return new Date()
-      },
-    },
-    articleTags: {
-      type: Array,
-      default: () => {
-        return []
-      },
-    },
-    articleSlug: {
-      type: String,
-      required: false,
-      default: 'sample',
+    article: {
+      type: Object,
+      required: true,
+      default: () => {},
     },
   },
 })

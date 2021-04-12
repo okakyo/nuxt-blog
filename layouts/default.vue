@@ -6,17 +6,14 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import TheHeader from '@/components/molecules/headers/TheHeader.vue'
+import { defineComponent } from '@vue/composition-api'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     TheHeader,
   },

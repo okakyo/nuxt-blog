@@ -1,11 +1,12 @@
 <template>
   <the-layout>
     <template #TheContent>
+      <v-breadcrumbs nuxt :items="urlItems" />
       <div class="pa-3 ma-4 article">
         <h1>{{ page.title }}</h1>
-        <v-divider />
-        <div>
-          {{ page.discription }}
+        <v-divider class="my-2" />
+        <div class="description">
+          {{ page.description }}
         </div>
         <nuxt-content class="my-5" :document="page" />
       </div>
@@ -13,18 +14,40 @@
   </the-layout>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import { defineComponent } from '@vue/composition-api'
 import TheLayout from '~/components/templates/layouts/TheLayout.vue'
 
-export default Vue.extend({
+export default defineComponent({
   components: { TheLayout },
   async asyncData({ params, $content }) {
     const slug = params.slug
-    const page = await $content(slug).fetch()
+    const page = await $content(`articles/${slug}`).fetch()
+
     return {
       page,
     }
+  },
+  computed: {
+    urlItems() {
+      return [
+        {
+          text: 'Home',
+          disabled: false,
+          to: '/',
+        },
+        {
+          text: 'Articles',
+          disabled: false,
+          to: '/articles',
+        },
+        {
+          text: this.page.title,
+          disabled: true,
+          to: `/articles/${this.page.slug}`,
+        },
+      ]
+    },
   },
 })
 </script>
@@ -34,6 +57,15 @@ export default Vue.extend({
   padding: 5%;
   padding-top: 2.5%;
   line-break: auto;
+
+  p {
+    padding: 0.25em 0.75em;
+    line-height: 1.8em;
+    white-space: pre-wrap;
+  }
+}
+.description {
+  margin: 0.75em;
 }
 .nuxt-content {
   ul {
@@ -58,13 +90,6 @@ export default Vue.extend({
   code {
     margin: 0 0.3rem;
   }
-}
-p {
-  padding: 0.75em;
-  padding-bottom: 0.25em;
-  padding-top: 0.25em;
-  line-height: 1.8em;
-  white-space: pre-wrap;
 }
 
 .v-application code {

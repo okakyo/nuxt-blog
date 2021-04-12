@@ -6,9 +6,9 @@
   </v-card>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import ArticleList from '~/components/molecules/lists/ArticleList.vue'
-export default Vue.extend({
+export default defineComponent({
   components: { ArticleList },
 })
 </script>

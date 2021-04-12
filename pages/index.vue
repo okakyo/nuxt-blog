@@ -1,33 +1,32 @@
 <template>
-  <the-layouts>
+  <the-layout>
     <template #TheContent>
-      <v-row>
+      <v-row v-if="articleList && articleList.length > 0">
         <v-col
-          v-for="article in articleList"
-          :key="article.title"
+          v-for="(article, index) in articleList"
+          :key="index"
           cols="12"
           lg="6"
         >
-          <article-card :article-title="article.title"></article-card>
+          <article-card :article="article" />
         </v-col>
       </v-row>
     </template>
-  </the-layouts>
+  </the-layout>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import ArticleCard from '~/components/organisms/cards/ArticleCard.vue'
-import TheLayouts from '~/components/templates/layouts/TheLayout.vue'
-
-export default Vue.extend({
+import TheLayout from '~/components/templates/layouts/TheLayout.vue'
+export default defineComponent({
   components: {
-    TheLayouts,
+    TheLayout,
     ArticleCard,
   },
   async asyncData({ $content }) {
     const articleList = await $content('articles', { deep: true })
-      .only(['title', 'slug', 'createdAt', 'updatedAt', 'tags'])
+      .only(['title', 'path', 'createdAt', 'updatedAt', 'tags'])
       .fetch()
     return {
       articleList,
