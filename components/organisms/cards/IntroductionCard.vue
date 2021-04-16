@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <v-card class="mb-3">
     <v-card-title>
       <v-avatar size="56">
@@ -19,21 +19,22 @@
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
+import { mdiTwitter, mdiGithub, mdiPost } from '@mdi/js'
 export default defineComponent({
   setup() {
     const actions = ref([
       {
-        icon: 'mdi-twitter',
+        icon: mdiTwitter,
         color: '',
         to: 'https://twitter.com/31415O_Kyo',
       },
       {
-        icon: 'mdi-github',
+        icon: mdiGithub,
         color: '',
         to: 'https://github.com/okakyo',
       },
       {
-        icon: 'mdi-post',
+        icon: mdiPost,
         color: '',
         to: 'https://okakyo-new-portfolio.netlify.app/',
       },

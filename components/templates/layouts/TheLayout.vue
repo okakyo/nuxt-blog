@@ -16,6 +16,7 @@
 import { defineComponent } from '@vue/composition-api'
 import ArticleListCard from '~/components/organisms/cards/ArticleListCard.vue'
 import IntroductionCard from '~/components/organisms/cards/IntroductionCard.vue'
+
 export default defineComponent({
   name: 'TheLayout',
   components: { IntroductionCard, ArticleListCard },

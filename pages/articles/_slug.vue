@@ -1,29 +1,21 @@
 <template>
   <the-layout>
     <template #TheContent>
-      <v-breadcrumbs nuxt :items="urlItems" />
-      <div class="pa-3 ma-4 article">
-        <h1>{{ page.title }}</h1>
-        <v-divider class="my-2" />
-        <div class="description">
-          {{ page.description }}
-        </div>
-        <nuxt-content class="my-5" :document="page" />
-      </div>
+      <article-window :page="page" :url-items="urlItems" />
     </template>
   </the-layout>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import ArticleWindow from '@/components/templates/articles/ArticleWindow.vue'
 import TheLayout from '~/components/templates/layouts/TheLayout.vue'
 
 export default defineComponent({
-  components: { TheLayout },
+  components: { TheLayout, ArticleWindow },
   async asyncData({ params, $content }) {
     const slug = params.slug
     const page = await $content(`articles/${slug}`).fetch()
-
     return {
       page,
     }

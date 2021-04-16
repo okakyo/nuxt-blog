@@ -17,8 +17,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import ArticleCard from '~/components/organisms/cards/ArticleCard.vue'
-import TheLayout from '~/components/templates/layouts/TheLayout.vue'
+import TheLayout from '@/components/templates/layouts/TheLayout.vue'
+import ArticleCard from '@/components/organisms/cards/ArticleCard.vue'
 export default defineComponent({
   components: {
     TheLayout,
