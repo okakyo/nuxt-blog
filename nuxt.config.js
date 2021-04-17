@@ -67,7 +67,6 @@ export default {
       iconfont: 'mdiSvg',
     },
     theme: {
-      dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
