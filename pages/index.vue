@@ -1,13 +1,11 @@
 <template>
   <the-layout>
     <template #TheContent>
-      <v-row v-if="articleList && articleList.length > 0">
-        <v-col
-          v-for="(article, index) in articleList"
-          :key="index"
-          cols="12"
-          lg="6"
-        >
+      <v-row
+        v-if="articleList && articleList.length > 0"
+        class="justify-center"
+      >
+        <v-col v-for="(article, index) in articleList" :key="index" cols="10">
           <article-card :article="article" />
         </v-col>
       </v-row>
@@ -26,7 +24,7 @@ export default defineComponent({
   },
   async asyncData({ $content }) {
     const articleList = await $content('articles', { deep: true })
-      .only(['title', 'path', 'createdAt', 'updatedAt', 'tags'])
+      .only(['title', 'path', 'createdAt', 'updatedAt', 'tags', 'description'])
       .fetch()
     return {
       articleList,

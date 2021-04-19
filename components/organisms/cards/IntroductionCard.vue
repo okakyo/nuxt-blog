@@ -8,7 +8,7 @@
     </v-card-title>
     <v-card-text> Web アプリ開発を勉強してます。 </v-card-text>
     <v-card-actions>
-      <v-btn v-for="item in actions" :key="item.icon" icon>
+      <v-btn v-for="item in actions" :key="item.icon" :href="item.to" icon>
         <v-icon>
           {{ item.icon }}
         </v-icon>
@@ -25,17 +25,14 @@ export default defineComponent({
     const actions = ref([
       {
         icon: mdiTwitter,
-        color: '',
         to: 'https://twitter.com/31415O_Kyo',
       },
       {
         icon: mdiGithub,
-        color: '',
         to: 'https://github.com/okakyo',
       },
       {
         icon: mdiPost,
-        color: '',
         to: 'https://okakyo-new-portfolio.netlify.app/',
       },
     ])

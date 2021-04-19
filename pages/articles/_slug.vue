@@ -31,7 +31,8 @@ export default defineComponent({
         {
           text: '記事一覧',
           disabled: false,
-          to: '/articles',
+          to: '/articles/',
+          exact: true,
         },
         {
           text: this.page.title,

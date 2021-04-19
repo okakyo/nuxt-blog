@@ -38,21 +38,27 @@ export default defineComponent({
   line-break: auto;
 
   p {
-    padding: 0.25em 0.75em;
+    padding: 0.25em 0;
     line-height: 1.8em;
     white-space: pre-wrap;
   }
 }
 .description {
-  margin: 0.75em;
+  margin: 1.5em 0;
 }
 .nuxt-content {
   h2 {
-    margin: 1em 0;
-    padding: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
   h3 {
-    margin-top: 2.25em;
+    margin-top: 1.25em 0;
+    margin-bottom: 0.75em;
+  }
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
     margin-bottom: 0.5em;
   }
 
@@ -63,7 +69,6 @@ export default defineComponent({
   h5,
   h6 {
     font-weight: 700;
-    margin: 0;
     line-height: 1.5;
     outline: 0;
   }
@@ -123,6 +128,10 @@ export default defineComponent({
   }
   code {
     margin: 0 0.3rem;
+  }
+
+  hr {
+    margin: 2.5em 0;
   }
   blockquote {
     border-left: 5px solid #ddd;

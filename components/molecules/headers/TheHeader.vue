@@ -1,6 +1,12 @@
 <template functional>
-  <v-app-bar app>
-    <v-app-bar-title> Kyoro Site </v-app-bar-title>
+  <v-app-bar app color="green lighten-2">
+    <nuxt-link
+      to="/"
+      style="text-decoration: none"
+      class="headline white--text"
+    >
+      Kyoro Site
+    </nuxt-link>
     <v-spacer />
   </v-app-bar>
 </template>

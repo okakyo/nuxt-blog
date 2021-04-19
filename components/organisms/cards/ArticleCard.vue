@@ -3,14 +3,18 @@
     <v-list-item three-line nuxt :to="article.path">
       <v-list-item-avatar
         tile
-        size="90"
-        color="grey"
-        class="pa-3"
-      ></v-list-item-avatar>
+        size="80"
+        color="grey lighten-3"
+        class="pa-3 my-auto"
+      >
+      </v-list-item-avatar>
       <v-list-item-content class="pa-5">
-        <v-list-item-title class="headline mb-1">
+        <v-card-title class="mb-3">
           {{ article.title }}
-        </v-list-item-title>
+        </v-card-title>
+        <v-list-item-subtitle class="my-1">
+          {{ article.description }}
+        </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
     <v-card-actions>
@@ -30,6 +34,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+
 export default defineComponent({
   name: 'ArticleCard',
   props: {
