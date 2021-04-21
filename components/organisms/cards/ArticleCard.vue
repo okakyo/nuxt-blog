@@ -1,35 +1,22 @@
 <template>
-  <v-card flat class="pa-2 ma-3">
-    <v-list-item three-line nuxt :to="article.path">
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey lighten-3"
-        class="pa-3 my-auto"
-      >
-      </v-list-item-avatar>
-      <v-list-item-content class="pa-5">
-        <v-card-title class="mb-3">
-          {{ article.title }}
-        </v-card-title>
-        <v-list-item-subtitle class="my-1">
-          {{ article.description }}
-        </v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
-    <v-card-actions>
-      <v-chip-group v-if="article.tags && article.tags.length > 0">
-        <v-chip
-          v-for="(item, index) in article.tags"
-          :key="index"
-          small
-          :to="`/tag/${item}`"
-        >
-          {{ item }}
-        </v-chip>
-      </v-chip-group>
-    </v-card-actions>
-  </v-card>
+  <div>
+    <v-card flat nuxt :to="article.path">
+      <v-img
+        :src="article.img ? article.img : require('~/assets/noImg.png')"
+        aspect-ratio="2"
+      />
+      <div class="d-flex flex-no-wrap">
+        <div>
+          <v-card-title style="font-size: 1rem" class="py-5">{{
+            article.title
+          }}</v-card-title>
+          <v-card-subtitle class="py-3">{{
+            article.updatedAt
+          }}</v-card-subtitle>
+        </div>
+      </div>
+    </v-card>
+  </div>
 </template>
 
 <script lang="ts">

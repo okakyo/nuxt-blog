@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mb-3">
+  <v-card outlined class="mb-3">
     <v-card-title>
       <v-avatar size="56">
         <img alt="user" :src="require('~/assets/myImg.png')" />

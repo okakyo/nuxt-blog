@@ -5,8 +5,13 @@
         v-if="articleList && articleList.length > 0"
         class="justify-center"
       >
-        <v-col v-for="(article, index) in articleList" :key="index" cols="10">
-          <article-card :article="article" />
+        <v-col
+          v-for="(article, index) in articleList"
+          :key="index"
+          cols="12"
+          sm="6"
+        >
+          <article-card class="mx-2" :article="article" />
         </v-col>
       </v-row>
     </template>

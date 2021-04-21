@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title> 最新記事一覧 </v-card-title>
     <v-divider />
     <article-list />
