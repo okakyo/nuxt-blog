@@ -11,7 +11,7 @@
             article.title
           }}</v-card-title>
           <v-card-subtitle class="py-3">{{
-            article.updatedAt
+            parsedDate(article.updatedAt)
           }}</v-card-subtitle>
         </div>
       </div>
@@ -29,6 +29,14 @@ export default defineComponent({
       type: Object,
       required: true,
       default: () => {},
+    },
+  },
+  methods: {
+    parsedDate(date: string) {
+      const getDate = new Date(date)
+      return `${getDate.getFullYear()}/${
+        getDate.getMonth() + 1
+      }/${getDate.getDate()} 更新`
     },
   },
 })

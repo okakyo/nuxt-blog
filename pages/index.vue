@@ -13,9 +13,9 @@
         </v-col>
       </v-row>
       <v-card-title>Tutorial</v-card-title>
-      <v-row>
-        <v-col cols="6" md="4">
-          <v-card flat>
+      <v-row class="mx-2">
+        <v-col v-for="(i, index) in 5" :key="index" cols="6" md="4">
+          <v-card outlined>
             <v-card-title> sample </v-card-title>
           </v-card>
         </v-col>
