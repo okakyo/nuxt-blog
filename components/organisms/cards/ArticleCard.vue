@@ -3,6 +3,7 @@
     <v-card flat nuxt :to="article.path">
       <v-img
         :src="article.img ? article.img : require('~/assets/noImg.png')"
+        :lazy-src="article.img ? article.img : require('~/assets/noImg.png')"
         aspect-ratio="2"
       />
       <div class="d-flex flex-no-wrap">
