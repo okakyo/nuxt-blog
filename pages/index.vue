@@ -41,7 +41,7 @@ export default defineComponent({
   async asyncData({ $content, query }) {
     const tagName = query.tag
     const articleList = await $content('articles', { deep: true })
-      .only(['title', 'path', 'createdAt', 'updatedAt', 'tags', 'description'])
+      .only(['title', 'path', 'updatedAt', 'tags', 'description'])
       .limit(6)
       .fetch()
     return {
