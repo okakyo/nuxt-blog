@@ -8,6 +8,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import ArticleList from '~/components/molecules/lists/ArticleList.vue'
+
 export default defineComponent({
   components: { ArticleList },
 })
