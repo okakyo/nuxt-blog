@@ -12,11 +12,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  loadingIndicator: {
-    name: 'chasing-dots',
-    color: 'black',
-    background: 'grey',
-  },
+  loading: { color: '#fff' },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
