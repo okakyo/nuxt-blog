@@ -1,5 +1,5 @@
 <template functional>
-  <v-app-bar app color="green lighten-2">
+  <v-app-bar app color="success">
     <nuxt-link
       to="/"
       style="text-decoration: none"
