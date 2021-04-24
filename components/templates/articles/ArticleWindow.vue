@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-card outlined>
     <v-breadcrumbs nuxt :items="urlItems" />
     <div class="pa-3 ma-4 article">
       <h1>{{ page.title }}</h1>
@@ -9,7 +9,7 @@
       </div>
       <nuxt-content class="my-5" :document="page" />
     </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
