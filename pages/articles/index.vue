@@ -1,10 +1,15 @@
 <template>
-  <div>記事一覧</div>
+  <the-layout> </the-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import TheLayout from '~/components/templates/layouts/TheLayout.vue'
 export default defineComponent({
-  components: {},
+  components: {
+    TheLayout,
+  },
 })
 </script>
+
+TheLayout

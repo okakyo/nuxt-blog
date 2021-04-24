@@ -6,6 +6,7 @@
         <nuxt />
       </v-container>
     </v-main>
+    <v-footer color="grey lighten-2"> </v-footer>
   </v-app>
 </template>
 
