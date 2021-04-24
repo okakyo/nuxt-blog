@@ -47,6 +47,14 @@ export default {
       lang: 'ja',
     },
   },
+  purgeCSS: {
+    paths: [
+      './node_modules/vuetify/dist/vuetify.js',
+      './node_modules/vue-spinner/src/ScaleLoader.vue',
+    ],
+    whitelist: ['DataCard', 'GraphLegend'],
+    whitelistPatterns: [/(col|row|v-window)/],
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
