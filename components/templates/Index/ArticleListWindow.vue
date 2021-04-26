@@ -3,10 +3,11 @@
     <v-card-title>Article</v-card-title>
     <v-row v-if="articleList && articleList.length > 0" class="mx-2">
       <v-col
-        v-for="(article, index) in articleList"
-        :key="index"
+        v-for="article in articleList"
+        :key="article.title"
         cols="12"
         sm="6"
+        xl="4"
       >
         <article-card class="mx-2" :article="article" />
       </v-col>

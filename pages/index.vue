@@ -6,7 +6,6 @@
       </v-card>
       <v-card outlined class="pa-3">
         <article-list-window :article-list="articleList" />
-        <tutorial-list-window />
       </v-card>
     </template>
   </the-layout>
@@ -16,11 +15,9 @@
 import { defineComponent } from '@vue/composition-api'
 import TheLayout from '@/components/templates/layouts/TheLayout.vue'
 import ArticleListWindow from '@/components/templates/Index/ArticleListWindow.vue'
-import TutorialListWindow from '@/components/templates/Index/TutorialListWindow.vue'
 export default defineComponent({
   components: {
     TheLayout,
-    TutorialListWindow,
     ArticleListWindow,
   },
   async asyncData({ $content, query }) {
