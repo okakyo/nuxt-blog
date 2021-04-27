@@ -2,6 +2,7 @@
 title: "JPHacks で完全オフライン環境でチーム開発した件"
 description: この記事では、JPHacks に参加して、完全なオフライン環境下でチーム開発を進めていき、イノベーター認定されるまでについてをまとめました。
 slug: "sample2"
+img: /img/logo/logo_jphacks.png"
 tags: 
     - Hackathon
     - Team
