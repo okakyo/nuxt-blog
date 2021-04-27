@@ -49,11 +49,7 @@ export default {
     },
   },
   purgeCSS: {
-    paths: [
-      './node_modules/vuetify/dist/vuetify.js',
-      './node_modules/vue-spinner/src/ScaleLoader.vue',
-    ],
-    whitelist: ['DataCard', 'GraphLegend'],
+    paths: ['./node_modules/vuetify/dist/vuetify.js'],
     whitelistPatterns: [/(col|row|v-window|m*-*|p*-*)/],
   },
 

@@ -26,7 +26,6 @@ export default defineComponent({
       .only(['title', 'path', 'updatedAt', 'tags', 'description'])
       .limit(6)
       .fetch()
-
     return {
       articleList,
       tagName,
