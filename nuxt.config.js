@@ -54,7 +54,7 @@ export default {
       './node_modules/vue-spinner/src/ScaleLoader.vue',
     ],
     whitelist: ['DataCard', 'GraphLegend'],
-    whitelistPatterns: [/(col|row|v-window)/],
+    whitelistPatterns: [/(col|row|v-window|m*-*|p*-*)/],
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
