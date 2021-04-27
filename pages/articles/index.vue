@@ -27,14 +27,17 @@ export default defineComponent({
     TheLayout,
     ArticleCard,
   },
-  async asyncData({ $content }) {
-    const getAllArticles = await $content('articles', { deep: true })
-      .only(['title'])
-      .fetch()
-    const articleList = await $content('articles', { deep: true })
-      .only(['title', 'path', 'updatedAt', 'tags', 'description'])
-      .limit(10)
-      .fetch()
+  async asyncData({ $content, query }) {
+    const page: number = Number(query.page)
+
+    const [getAllArticles, articleList] = await Promise.all([
+      $content('articles', { deep: true }).only(['title']).fetch(),
+      $content('articles', { deep: true })
+        .only(['title', 'path', 'updatedAt', 'tags', 'description'])
+        .limit(10)
+        .skip(10 * page)
+        .fetch(),
+    ])
     const countAllArticles: number = Math.ceil(getAllArticles.length / 6)
     return {
       articleList,

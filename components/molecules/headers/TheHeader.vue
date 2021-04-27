@@ -1,5 +1,5 @@
 <template functional>
-  <v-app-bar app class="green lighten-2 pa-3">
+  <v-app-bar app class="green lighten-2">
     <nuxt-link
       to="/"
       style="text-decoration: none"
